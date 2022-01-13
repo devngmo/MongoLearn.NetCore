@@ -22,12 +22,12 @@ namespace PetShop
             return result.ToList();
         }
 
-        internal void Clear()
+        public void Clear()
         {
             PetCollection.DeleteMany(Builders<PetEntity>.Filter.Empty);
         }
 
-        internal void add(PetEntity petEntity)
+        public void add(PetEntity petEntity)
         {
             PetCollection.InsertOne(petEntity);
         }
