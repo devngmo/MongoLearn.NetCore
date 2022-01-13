@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,8 @@ namespace PetShop.Domain.Entities
 {
     public class PetEntity
     {
-        public string _id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public string name { get; set; }
         public string race { get; set; }
         /// <summary>
